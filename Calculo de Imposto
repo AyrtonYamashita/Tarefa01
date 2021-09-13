@@ -1,0 +1,38 @@
+package calculos.pack;
+
+import java.util.Scanner;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		Scanner leitor = new Scanner(System.in);
+		
+		String nome, cpf;
+		double valorFinal, valorInicial, taxa;
+		
+		System.out.println("Nome do usuário: ");
+		nome = leitor.nextLine();
+		
+		System.out.println("CPF cadastrado: ");
+		cpf = leitor.nextLine();
+		
+		System.out.println("Qual valor deseja investir?: ");
+		valorInicial = leitor.nextDouble();
+		
+		System.out.println("Qual a taxa de juros a ser implementada?: ");
+		taxa = leitor.nextDouble();
+		
+		for(int tempo = 0; tempo <=24; tempo++) {
+			valorFinal = valorInicial * Math.pow(1 + taxa, tempo);
+			
+			System.out.println("Prezado " + nome + ", cadastrado no CPF: " + cpf);
+			System.out.println(" ");
+			System.out.println("Seu valor inicial investido foi de: " + valorInicial);
+			System.out.println(" ");
+			System.out.println("O valor acrescido aos juros implementados é: " + valorFinal);
+			System.out.println(" ");
+		}
+	}
+
+}
